@@ -171,6 +171,13 @@ $ ansible all -m ansible.builtin.setup
 
 Você também pode filtrar esta saída para exibir apenas certos facts, veja a documentação do módulo `ansible.builtin.setup` para detalhes.
 
+## Gerenciando pelo Git
+
+Clonando repositório:
+```
+ansible all -i inventory.yml -m git -a 'repo=https://github.com/wonzoski/script_quota.git dest=/home/ubuntu'
+```
+
 ## Modo de verificação (Check mode)
 
 No modo de verificação, o Ansible não faz nenhuma alteração nos sistemas remotos. O Ansible imprime apenas os comandos. Ele não executa os comandos.
@@ -180,6 +187,8 @@ $ ansible all -m copy -a "content=foo dest=/root/bar.txt" -C
 ```
 
 Habilitar o modo de verificação (`-C` ou `--check`) no comando acima significa que o Ansible não cria ou atualiza realmente o arquivo `/root/bar.txt` em nenhum sistema remoto.
+
+## Modo de verificação (Check mode)
 
 ## Padrões e comandos ad-hoc
 
